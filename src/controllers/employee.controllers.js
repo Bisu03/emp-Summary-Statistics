@@ -109,7 +109,7 @@ export const employeeSalary = async (req, res) => {
     const stats = await EmployeeModel.aggregate(aggregationPipeline);
 
     if (stats.length === 0) {
-      return res.status(204).json({ message: 'No employees found' });
+      return res.status(404).json({ message: 'No employees found' });
     }
 
     const summary = stats[0];
