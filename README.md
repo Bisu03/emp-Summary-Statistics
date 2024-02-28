@@ -1,28 +1,24 @@
-
 # Project Title
 
 Micro-Service for Summary Statistics
 
-
 ## Acknowledgements
 
- - [nodejs must be installed in your pc](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
- - [download or clone the app](https://github.com/matiassingers/awesome-readme)
- - [Go into the root directory](https://github.com/matiassingers/awesome-readme)
- - [open it in your code editor](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
- - [do `npm install` in the terminal and let the all packages installed](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
- - [create `.env` in the root directory using sample file](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
- - [`npm start` on the terminal to start the server](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
-
+- [nodejs must be installed in your pc](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+- [download or clone the app](https://github.com/matiassingers/awesome-readme)
+- [Go into the root directory](https://github.com/matiassingers/awesome-readme)
+- [open it in your code editor](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+- [do `npm install` in the terminal and let the all packages installed](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+- [create `.env` in the root directory using sample file](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+- [`npm start` on the terminal to start the server](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
 ## API methods and endpoints
 
 ### Add Employee API
 
 ```
-  POST http://localhost:8000/api/addemployee
+  POST http://localhost:8000/api/employee/addemployee
 ```
-
 
 This endpoint is used to add a new employee.
 
@@ -34,20 +30,22 @@ This endpoint is used to add a new employee.
 - `department` (string, required): The department to which the employee belongs.
 - `on_contract` (boolean, required): Indicates whether the employee is on contract or not.
 - `sub_department` (string, required): The sub-department to which the employee belongs.
-    
-#### input sample 
+
+#### input sample
+
 ##### raw (json)
 
 ```
-{ 
-    "name": "Nikhil", 
-    "salary": "110000", 
-    "currency": "USD", 
-    "on_contract": "true", 
-    "department": "Engineering", 
-    "sub_department": "Platform" 
+{
+    "name": "Nikhil",
+    "salary": "110000",
+    "currency": "USD",
+    "on_contract": "true",
+    "department": "Engineering",
+    "sub_department": "Platform"
 }
 ```
+
 #### Response
 
 - Status: 201
@@ -57,8 +55,9 @@ This endpoint is used to add a new employee.
 ### Fetch Employee API
 
 ```
-  GET http://localhost:8000/api
+  GET http://localhost:8000/api/employee
 ```
+
 This endpoint is used to fetch all employee.
 
 #### Response
@@ -87,16 +86,16 @@ This endpoint is used to fetch all employee.
         "currency": "USD",
         "department": "Engineering",
         "sub_department": "Platform"
-    }, 
+    },
 ]
 ```
-
 
 ### Delete Employee API
 
 ```
-  DELETE http://localhost:8000/api/deleteemployee/:employee_object_id
+  DELETE http://localhost:8000/api/employee/deleteemployee/:employee_object_id
 ```
+
 This endpoint is used to delete employee.
 
 #### Response
@@ -108,20 +107,22 @@ This endpoint is used to delete employee.
 ### Summary Statistics Employee API
 
 ```
-  GET http://localhost:8000/api/employeeSalary
+  GET http://localhost:8000/api/employee/employeesalary
 ```
-it will take query params 
 
-``` 
+it will take query params
+
+```
     Query Param - (single or all)
     sub_department=true,
     department=true,
     on_contract=truek
 ```
-#### url sample 
+
+#### url sample
 
 ```
-  GET http://localhost:8000/api/employeeSalary?sub_department=true
+  GET http://localhost:8000/api/employee/employeesalary?sub_department=true
 ```
 
 This endpoint is used to get fetch summary statistics
@@ -132,6 +133,7 @@ This endpoint is used to get fetch summary statistics
 - Status: 201
 - Content-Type: application/json
 - `object`: sample data .
+
 ```
 {
     "count": 5,
@@ -145,7 +147,12 @@ This endpoint is used to get fetch summary statistics
 }
 ```
 
-## To test 
+## To test
 
- - [go to test dir `cd test`](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
- - [run `npx mocha employee.test.js` ](https://github.com/matiassingers/awesome-readme)
+- [go to test dir `cd test`](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+- [run `npx mocha employee.test.js` ](https://github.com/matiassingers/awesome-readme)
+
+
+## 🔗 Then Setup The Frontend
+https://github.com/Bisu03/emp-Summary-Statistics-frontend
+
