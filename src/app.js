@@ -2,10 +2,10 @@ import express from 'express'
 import mongar from "morgan"
 import dotenv from "dotenv";
 import cors from "cors";
-import cookieParser from 'cookie-parser';
 
 //  import routes
 import Employee from './routes/employee.routes.js';
+import Auth from './routes/auth.routes.js';
 
 //  import db
 import { connectDB } from './db/connectDb.js';
@@ -17,7 +17,6 @@ dotenv.config();
 connectDB()
 
 //  middlewares
-app.use(cookieParser());
 app.use(mongar("dev"))
 app.use(express.json())
 
@@ -31,6 +30,7 @@ app.use(
 
 
 //  api routes
+app.use("/api/auth", Auth);
 app.use("/api/employee", Employee);
 
 // Start the server

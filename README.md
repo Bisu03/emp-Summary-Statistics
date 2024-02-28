@@ -4,15 +4,87 @@ Micro-Service for Summary Statistics
 
 ## Acknowledgements
 
-- [nodejs must be installed in your pc](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
-- [download or clone the app](https://github.com/matiassingers/awesome-readme)
-- [Go into the root directory](https://github.com/matiassingers/awesome-readme)
-- [open it in your code editor](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
-- [do `npm install` in the terminal and let the all packages installed](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
-- [create `.env` in the root directory using sample file](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
-- [`npm start` on the terminal to start the server](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+- [nodejs must be installed in your pc]()
+- [download or clone the app]()
+- [Go into the root directory]()
+- [open it in your code editor]()
+- [do `npm install` in the terminal and let the all packages installed]()
+- [create `.env` in the root directory using sample file]()
+- [`npm start` on the terminal to start the server]()
 
 ## API methods and endpoints
+
+### Register User API
+
+```
+  POST http://localhost:8000/api/auth/register
+```
+
+This endpoint is used to register a new user.
+
+#### Request Body
+
+- `username` (string, required): The name of the user.
+- `email` (number, required): The user email.
+- `password` (string, required): The user password.
+
+#### input sample
+
+##### raw (json)
+
+```
+
+ {
+    "username":"testuser",
+    "email":"testuser@gmail.com",
+    "password":"1234"
+}
+
+```
+
+#### Response
+
+- Status: 201
+- Content-Type: application/json
+- `message` (string): A message confirming the success of the operation.
+
+
+### Login User API
+
+```
+  POST http://localhost:8000/api/auth/login
+```
+
+This endpoint is used to login a user after register.
+
+#### Request Body
+
+- `username` (string, required): The name of the user.
+- `password` (string, required): The user password.
+
+#### input sample
+
+##### raw (json)
+
+```
+
+ {
+    "username":"testuser",
+    "password":"1234"
+}
+
+```
+
+#### Response
+
+- Status: 201
+- Content-Type: application/json
+- `object` (object): it will reture a user info and token .
+### Add Header
+
+- [ setup the authorization header otherwise it will not work  ]()
+- [ copy the the token ]()
+- [ then add to the Authorization : "Bearer " + {token}]()
 
 ### Add Employee API
 
